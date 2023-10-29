@@ -1,12 +1,13 @@
 {
-  "name": "ng-ui-list",
+  "name": "ng-ion-alphabetical-ui",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@ionic/angular": "^7.5.2"
   },
   "sideEffects": false
 }

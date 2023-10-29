@@ -19,8 +19,8 @@ import { ContentScrollableComponent } from './components/content-scrollable/cont
     ContentScrollableComponent,
   ],
 })
-export class NgUiList {
-  constructor(@Optional() @SkipSelf() parentModule: NgUiList) {
+export class NgAlphabeticalListModule {
+  constructor(@Optional() @SkipSelf() parentModule: NgAlphabeticalListModule) {
     if (parentModule) {
       throw new Error(
         'SelectLetterModule is already loaded. Import it in the AppModule only.'
@@ -28,9 +28,9 @@ export class NgUiList {
     }
   }
 
-  static forRoot({ offset }: { offset: number }): ModuleWithProviders<NgUiList> {
+  static forRoot({ offset }: { offset: number }): ModuleWithProviders<NgAlphabeticalListModule> {
     return {
-      ngModule: NgUiList,
+      ngModule: NgAlphabeticalListModule,
       providers: [
         {
           provide: SelectLetterService,

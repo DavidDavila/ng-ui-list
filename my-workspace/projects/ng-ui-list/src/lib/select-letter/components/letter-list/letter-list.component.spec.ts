@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LetterListComponent } from './letter-list.component';
+import { LetterComponent } from './letter-list.component';
 
 describe('LetterListComponent', () => {
-  let component: LetterListComponent;
-  let fixture: ComponentFixture<LetterListComponent>;
+  let component: LetterComponent;
+  let fixture: ComponentFixture<LetterComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LetterListComponent ],
+      declarations: [ LetterComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LetterListComponent);
+    fixture = TestBed.createComponent(LetterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

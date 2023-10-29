@@ -6,7 +6,7 @@ import { LETTER_LIST } from '../constants/letter-list.const';
   providedIn: 'root',
 })
 export class SelectLetterService {
-  private offset:number = 0;
+  private offset:number = 5;
   public selectedtLetter$: BehaviorSubject<string> = new BehaviorSubject(
     LETTER_LIST[0]
   );

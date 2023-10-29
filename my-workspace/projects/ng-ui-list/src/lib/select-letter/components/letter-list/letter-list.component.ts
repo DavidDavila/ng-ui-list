@@ -3,7 +3,7 @@ import { LETTER_LIST } from '../../constants/letter-list.const';
 import { SelectLetterService } from '../../services/select-letter.service';
 
 @Component({
-  selector: 'select-letter-list',
+  selector: 'alphabetical-letter',
   templateUrl: './letter-list.component.html',
   styleUrls: ['./letter-list.component.scss'],
 })

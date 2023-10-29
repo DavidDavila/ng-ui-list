@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {NgUiList,SelectLetterService} from '../../../ng-ui-list/src/public-api';
+import { BrowserModule } from '@angular/platform-browser'; 
 import { AppComponent } from './app.component';
+import {  NgAlphabeticalListModule } from '../../../ng-ui-list/src/public-api';
  
 
 @NgModule({
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    NgUiList.forRoot({offset:0}),
+    NgAlphabeticalListModule.forRoot({offset: 122}) ,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import { SelectLetterService } from '../../services/select-letter.service';
 import { IonContent } from '@ionic/angular';
 
 @Component({
-  selector: 'select-letter-content-scrollable',
+  selector: 'alphabetical-list',
   templateUrl: './content-scrollable.component.html',
 })
 export class ContentScrollableComponent {
@@ -14,13 +14,13 @@ export class ContentScrollableComponent {
       const actualLetter =
         this._selectLetterService.selectedtLetter$.getValue();
 
-      const anchorDom: HTMLLIElement | null = document.querySelector(
-        `#letter-${actualLetter}`
-      ) as HTMLLIElement;
+        const anchorDom: HTMLLIElement | null = document.querySelector(
+          `[letter-list="${actualLetter}"]`
+        ) as HTMLLIElement;
       try {
         this.content.scrollToPoint(0, anchorDom.offsetTop - this._selectLetterService.getOffset(), 600);
       } catch (error) {
-        document.querySelector('select-letter-content-scrollable')?.scrollTo({left:0, top:anchorDom.offsetTop - this._selectLetterService.getOffset(), behavior:'smooth'});
+        this.content['el'].parentElement​?.scrollTo({left:0, top:anchorDom.offsetTop - this._selectLetterService.getOffset(), behavior:'smooth'});
       }
       
     });
