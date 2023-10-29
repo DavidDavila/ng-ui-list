@@ -1,0 +1,27 @@
+<section>
+    <select-letter-list></select-letter-list>
+    
+    
+<select-letter-content-scrollable>
+    
+    <ul id="plant-list">
+      <ng-container
+        *ngFor="let item of plantList | groupByFirstLetter | keyvalue"
+      >
+        <li
+          [id]="'letter-' + item.key"
+          [ngClass]="{ 'height-0': !item.value.length }"
+        >{{ item.key }}
+          <ul>
+            <ng-container *ngFor="let plant of item.value">
+              <li>
+            hola
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </select-letter-content-scrollable>
+  </section>
+  
