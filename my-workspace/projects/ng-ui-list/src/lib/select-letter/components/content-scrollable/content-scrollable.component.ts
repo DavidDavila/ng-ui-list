@@ -1,14 +1,22 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { SelectLetterService } from '../../services/select-letter.service';
 import { IonContent } from '@ionic/angular';
-
+const selector = 'alphabetical-list';
 @Component({
-  selector: 'alphabetical-list',
+  selector ,
   templateUrl: './content-scrollable.component.html',
 })
 export class ContentScrollableComponent {
-  offset = 122;
+  offset = this._selectLetterService.getOffset();
   @ViewChild(IonContent, { static: false }) content!: IonContent;
+  @HostListener('scroll', ['$event'])
+  onScroll(event: any): void {
+    
+    if(event.target.localName === selector){
+      this.updateLetter();
+    }
+  }
+
   constructor(public _selectLetterService: SelectLetterService) {
     this._selectLetterService.updateList$.subscribe(() => {
       const actualLetter =
@@ -34,17 +42,14 @@ export class ContentScrollableComponent {
       let lis = document.querySelectorAll('#plant-list >li');
       for (let i = 0; i < lis.length; i++) {
         let family = lis[i].getBoundingClientRect();
-        if (family.height + family.top > 122) {
-          const letter = lis[i].id.replace('letter-', '');
+        if (family.height + family.top > this._selectLetterService.getOffset()) {
+          const letter = lis[i].getAttribute('letter-list')  ;
+
 
           if (
             letter !== this._selectLetterService.selectedtLetter$.getValue()
           ) {
-            console.log({
-              letter,
-              inService: this._selectLetterService.selectedtLetter$.getValue(),
-            });
-            this._selectLetterService.selectLetter(letter, false);
+            letter && this._selectLetterService.selectLetter(letter, false);
           }
           break;
         }
