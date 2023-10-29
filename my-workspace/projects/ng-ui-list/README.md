@@ -1,6 +1,6 @@
 
-# ng-ion-alphabetical-ui
-Librería visual que te ordena un array de objectos alfabéticamente y te los lista, la navegación puede ser onClick u onDrag. 
+# ng-ionic-alphabetical-ui
+Librería visual **para Angular o Ionic/Angular** que te ordena un array de objectos alfabéticamente y te los lista, la navegación puede ser onClick u onDrag. 
 Cuando pulses una letra, la sección del contenido automáticamente hará scroll hasta llegar a la sección.
 
 ![Prun app](https://raw.githubusercontent.com/DavidDavila/prun-ionic-app/main/readme.png "Prun app")
@@ -9,7 +9,7 @@ Cuando pulses una letra, la sección del contenido automáticamente hará scroll
 Para instalar esta libraría visual, pon en tu consola:
 
     
-    npm install ng-ion-alphabetical-ui
+    npm install ng-ionic-alphabetical-ui
     
 Para importar el módulo:
     
